@@ -77,23 +77,7 @@ class Predicter:
                         
                 print("confidence is : " , conf)
                 if(conf>40):
-                    if(Id==1):
-                        Id="Rahul"
-                    elif(Id==2):
-                        Id="Abhiman"
-                    elif Id==3:
-                        Id="Sidp"
-                    elif Id==4:
-                        Id ="Uggi"
-                    elif Id==5:
-                        Id = "Sundar"
-                    elif Id == 6:
-                        Id = "Roma"
-                    elif Id ==7:
-                        Id = "Amrita"
-                    elif Id==8:
-                        Id = "Shoo"
-                    
+                    Id = Id
                      
                 else:
                     Id="Unknown"

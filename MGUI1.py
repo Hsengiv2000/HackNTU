@@ -5,7 +5,9 @@ import FaceRecognizerlegit as fr
 import trainner as tr
 import main as mr
 import sound1 as s1
+from PIL import Image, ImageTk
 import FaceCropper2 as fc
+main =None
 #import tkMessageBox
 import firecode as fl
 
@@ -65,13 +67,38 @@ def add2(event = None):
 def add3():
     p = mr.Predicter()
     p.run()
+
+
 def run():
-    main = Tk()
+    global main
+    main = tkinter.Toplevel()
     main.geometry("400x750")
-    main.resizable(0, 0)
+    #main.resizable(0, 0)
     main.configure(background='#262626')
     main.title("Main Page")
-    predict = Button(main,justify = CENTER)
+    photo1=ImageTk.PhotoImage(Image.open("binoculars.png"))
+    photo3=ImageTk.PhotoImage(Image.open("edit.png"))
+    photo2=ImageTk.PhotoImage(Image.open("coach.png"))
+    photo4=ImageTk.PhotoImage(Image.open("speaker.png"))
+
+    my_button = Button(main, text='       PREDICT  ', image=photo1, compound=LEFT, font=('Helvetica', 26), cursor='hand2')
+    my_button.config(width='400', padx = 0, pady =0, bd=0, highlightthickness=0, command =add3)
+
+    my_button2 = Button(main, text='         TRAIN     ', image=photo2, compound=LEFT, font=('Helvetica',26), cursor='hand2')
+    my_button2.config(width='400', padx = 0, pady =0, bd=0, highlightthickness=0,command=add4)
+
+    my_button3 = Button(main, text='WRITE DATASET', image=photo3, compound=LEFT, font=('Helvetica', 26), cursor='hand2')
+    my_button3.config(width='400', padx = 0, pady =0, bd=0, highlightthickness=0,command = add2)
+    
+    my_button4 = Button(main, text='         AUDIO     ', image=photo4, compound=LEFT, font=('Helvetica', 26), cursor='hand2')
+    my_button4.config(width='400', padx = 0, pady =0, bd=0, highlightthickness=0, command=add)
+
+    my_button.place(x=0, y=0, width=400, height= 182)
+    my_button2.place(x=0, y=190, width=400, height= 181)
+    my_button3.place(x=0, y=380, width=400, height= 181)
+    my_button4.place(x=0, y=570, width=400, height= 182)
+    main.mainloop()
+''' predict = Button(main,justify = CENTER)
     train = Button(main,justify = CENTER)
     takedata = Button(main,justify = CENTER)
     audio = Button(main,justify = CENTER)
@@ -85,6 +112,5 @@ def run():
     train.pack()
     takedata.pack()
     audio.pack()
-
-
-    main.mainloop()
+'''
+    
